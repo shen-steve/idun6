@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://idun-beauty.pages.dev/sitemap.xml
