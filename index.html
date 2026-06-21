@@ -1175,13 +1175,17 @@
     }
 
     .results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1.5rem;
       padding: 0.8rem 8vw 1.5rem;
     }
 
     .result-card {
+      flex: 0 1 calc(25% - 1.15rem);
+      min-width: 240px;
+      max-width: 340px;
       border: 1px solid rgba(58,90,60,.12);
       overflow: hidden;
     }
@@ -1571,7 +1575,8 @@
 
       .space-grid { grid-template-columns: 1fr; }
       .srv-grid { grid-template-columns: 1fr; }
-      .results-grid { grid-template-columns: 1fr 1fr; }
+      .results-grid { gap: 1rem; padding: 0.8rem 4vw 1.5rem; }
+      .result-card { flex: 0 1 calc(50% - 0.5rem); min-width: 160px; max-width: unset; }
       .location-body { grid-template-columns: 1fr; }
       .location-info { padding: 2rem 6vw; }
       .location-map iframe { min-height: 45vh; }
@@ -1585,7 +1590,7 @@
       .footer-links a { font-size: .72rem; letter-spacing: .08em; }
       .footer-copy { font-size: .6rem; letter-spacing: .04em; }
       footer { padding-bottom: 5.5rem; }
-      .results-grid { grid-template-columns: 1fr; }
+      .result-card { flex: 0 1 100%; min-width: unset; }
       .about-story-text, .about-philosophy,
       .about-pillars, .space-header,
       .services-section, .services-hero,
@@ -2070,11 +2075,14 @@
     <div class="result-card">
       <div class="result-flip-zone" onclick="toggleResult(this)">
         <div class="result-badge-wrap"><div class="result-badge">Before</div></div>
-        <div class="result-face face-before">
-          <img src="images/r1-before.png" alt="科技幸福SO 瘦身前" loading="lazy">
+        <div class="result-face face-before" style="background:#ede0c8;">
+          <img src="images/r1-before.png" alt="科技幸福SO 瘦身前" loading="lazy" style="object-fit: contain; object-position: center top;">
+          <div style="position:absolute;inset:0;background:#ede0c8;mix-blend-mode:multiply;pointer-events:none;"></div>
         </div>
-        <div class="result-face face-after">
-          <img src="images/r1-after.png" alt="科技幸福SO 瘦身後" loading="lazy">
+        <div class="result-face face-after" style="background:#ede0c8;">
+          <img src="images/r1-after.png" alt="科技幸福SO 瘦身後" loading="lazy" style="object-fit: contain; object-position: center top;">
+          <div style="position:absolute;inset:0;background:#ede0c8;mix-blend-mode:multiply;pointer-events:none;"></div>
+        </div>
         </div>
       </div>
       <div class="result-info">
@@ -2131,6 +2139,57 @@
       <div class="result-info">
         <h3>科技幸福SO</h3>
         <p>腹部塑形・魔磁肌塑療程</p>
+      </div>
+    </div>
+
+    <!-- 案例 5：小V臉 -->
+    <div class="result-card">
+      <div class="result-flip-zone" onclick="toggleResult(this)">
+        <div class="result-badge-wrap"><div class="result-badge">Before</div></div>
+        <div class="result-face face-before" style="background:#e8d5c4;">
+          <img src="images/r5-before.jpg" alt="小V臉前" loading="lazy" style="object-fit: contain; object-position: center center;">
+        </div>
+        <div class="result-face face-after" style="background:#e8d5c4;">
+          <img src="images/r5-after.jpg" alt="小V臉後" loading="lazy" style="object-fit: contain; object-position: center center;">
+        </div>
+      </div>
+      <div class="result-info">
+        <h3>小V臉</h3>
+        <p>臉型雕塑・線條緊緻提升</p>
+      </div>
+    </div>
+
+    <!-- 案例 6：膠原淚溝 -->
+    <div class="result-card">
+      <div class="result-flip-zone" onclick="toggleResult(this)">
+        <div class="result-badge-wrap"><div class="result-badge">Before</div></div>
+        <div class="result-face face-before" style="background:#e8d5c4;">
+          <img src="images/r6-before.jpg" alt="膠原淚溝前" loading="lazy" style="object-fit: contain; object-position: center center;">
+        </div>
+        <div class="result-face face-after" style="background:#e8d5c4;">
+          <img src="images/r6-after.jpg" alt="膠原淚溝後" loading="lazy" style="object-fit: contain; object-position: center center;">
+        </div>
+      </div>
+      <div class="result-info">
+        <h3>膠原淚溝</h3>
+        <p>淚溝填補・眼周飽滿自然</p>
+      </div>
+    </div>
+
+    <!-- 案例 7：科技幸福SO 體態 -->
+    <div class="result-card">
+      <div class="result-flip-zone" onclick="toggleResult(this)">
+        <div class="result-badge-wrap"><div class="result-badge">Before</div></div>
+        <div class="result-face face-before">
+          <img src="images/r7-before.png" alt="科技幸福SO 體態前" loading="lazy" style="object-position: center 20%;">
+        </div>
+        <div class="result-face face-after">
+          <img src="images/r7-after.png" alt="科技幸福SO 體態後" loading="lazy" style="object-position: center 20%;">
+        </div>
+      </div>
+      <div class="result-info">
+        <h3>科技幸福SO</h3>
+        <p>全身體態顯瘦・曲線重塑</p>
       </div>
     </div>
 
