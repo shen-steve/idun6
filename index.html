@@ -2323,10 +2323,6 @@
 ════════════════════════════════════ -->
 <script>
   /* ── Page Switching ── */
-  function setScrollLock(id) {
-    document.body.style.overflow = id === 'home' ? 'hidden' : '';
-  }
-
   function showPage(id) {
     const current = document.querySelector('.page.active');
     const next = document.getElementById(id);
@@ -2342,12 +2338,36 @@
 
       next.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'instant' });
-      setScrollLock(id);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
       updateNav(id);
     }, 260);
   }
 
-  setScrollLock('home');
+  function navigate(id) {
+    const newHash = '#' + id;
+    if (window.location.hash === newHash) {
+      showPage(id);
+    } else {
+      window.location.hash = newHash;
+    }
+  }
+
+  window.addEventListener('hashchange', () => {
+    const id = window.location.hash.slice(1) || 'home';
+    showPage(id);
+  });
+
+  /* ── Init: 直接用網址進入特定頁 ── */
+  (function () {
+    const initId = window.location.hash.slice(1) || 'home';
+    const initPage = document.getElementById(initId);
+    if (initPage && initId !== 'home') {
+      document.querySelector('.page.active').classList.remove('active');
+      initPage.classList.add('active');
+      updateNav(initId);
+    }
+  })();
 
   function updateNav(id) {
     document.querySelectorAll('[data-page]').forEach(el => {
@@ -2359,7 +2379,7 @@
   document.querySelectorAll('[data-page]').forEach(el => {
     el.addEventListener('click', e => {
       e.preventDefault();
-      showPage(el.dataset.page);
+      navigate(el.dataset.page);
       closeMenu();
     });
   });
