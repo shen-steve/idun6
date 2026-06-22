@@ -584,10 +584,11 @@
 
     @media (min-width: 768px) {
       .home-hero-img {
-        width: auto;
+        width: 100%;
         max-width: 100%;
         height: calc(100vh - var(--nav-h));
-        object-fit: contain;
+        object-fit: cover;
+        object-position: center top;
       }
     }
 
@@ -1345,6 +1346,41 @@
     .pkg-card:hover .pkg-poster { transform: scale(1.02); }
 
     /* ════════════════════════════════════
+       MONTHLY FAV
+    ════════════════════════════════════ */
+    .monthly-header {
+      text-align: center;
+      padding: 1.5rem 8vw 1rem;
+    }
+    .monthly-header .ornament {
+      margin: .6rem 0;
+    }
+    .monthly-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      color: #2d3a2e;
+      letter-spacing: .1em;
+      margin: .4rem 0 .3rem;
+    }
+    .monthly-header p {
+      font-size: .88rem;
+      letter-spacing: .12em;
+      color: rgba(45,58,46,.7);
+    }
+    .monthly-img-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 0 8vw 2rem;
+    }
+    .monthly-img-wrap img {
+      max-width: 560px;
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 8px 40px rgba(45,58,46,.12);
+    }
+
+    /* ════════════════════════════════════
        LOCATION
     ════════════════════════════════════ */
     #location { background: #f5f0e8; }
@@ -1775,6 +1811,7 @@
     <li><a href="#" data-page="services">我會什麼</a></li>
     <li><a href="#" data-page="results">變美不解釋</a></li>
     <li><a href="#" data-page="packages">套裝課程</a></li>
+    <li><a href="#" data-page="monthly">本月寵粉</a></li>
     <li><a href="#" data-page="location">我們在這</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
@@ -1791,6 +1828,7 @@
   <a href="#" data-page="services" data-mobile>我會什麼</a>
   <a href="#" data-page="results" data-mobile>變美不解釋</a>
   <a href="#" data-page="packages" data-mobile>套裝課程</a>
+  <a href="#" data-page="monthly" data-mobile>本月寵粉</a>
   <a href="#" data-page="location" data-mobile>我們在這</a>
 </div>
 
@@ -1803,15 +1841,6 @@
     <img class="home-hero-img" src="images/hero.jpg" alt="伊登森活 - 放下疲憊，回屬於自己的節奏，活出最美好的狀態。">
   </div><!-- /.home-hero -->
 
-  <footer>
-    <div class="footer-brand">伊登森活 Idun Beauty SPA</div>
-    <div class="footer-links">
-      <a href="tel:0913339968">📞 0913-339-968</a>
-      <a href="https://lin.ee/sfbEmKl" target="_blank" rel="noopener">LINE @fgv6668o</a>
-      <a href="https://www.instagram.com/idun__spa" target="_blank" rel="noopener">Instagram</a>
-    </div>
-    <div class="footer-copy">© 2026 伊登森活 Idun Beauty SPA<br>台南市東區東光路2段42號2樓</div>
-  </footer>
 </div>
 
 
@@ -1880,15 +1909,6 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-brand">伊登森活 Idun Beauty SPA</div>
-    <div class="footer-links">
-      <a href="tel:0913339968">📞 0913-339-968</a>
-      <a href="https://lin.ee/sfbEmKl" target="_blank" rel="noopener">LINE @fgv6668o</a>
-      <a href="https://www.instagram.com/idun__spa" target="_blank" rel="noopener">Instagram</a>
-    </div>
-    <div class="footer-copy">© 2026 伊登森活 Idun Beauty SPA<br>台南市東區東光路2段42號2樓</div>
-  </footer>
 </div>
 
 
@@ -1908,15 +1928,6 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-brand">伊登森活 Idun Beauty SPA</div>
-    <div class="footer-links">
-      <a href="tel:0913339968">📞 0913-339-968</a>
-      <a href="https://lin.ee/sfbEmKl" target="_blank" rel="noopener">LINE @fgv6668o</a>
-      <a href="https://www.instagram.com/idun__spa" target="_blank" rel="noopener">Instagram</a>
-    </div>
-    <div class="footer-copy">© 2026 伊登森活 Idun Beauty SPA<br>台南市東區東光路2段42號2樓</div>
-  </footer>
 </div>
 
 
@@ -2045,15 +2056,6 @@
     <a href="https://lin.ee/sfbEmKl" class="btn-gold" target="_blank" rel="noopener">LINE 預約諮詢</a>
   </div>
 
-  <footer>
-    <div class="footer-brand">伊登森活 Idun Beauty SPA</div>
-    <div class="footer-links">
-      <a href="tel:0913339968">📞 0913-339-968</a>
-      <a href="https://lin.ee/sfbEmKl" target="_blank" rel="noopener">LINE @fgv6668o</a>
-      <a href="https://www.instagram.com/idun__spa" target="_blank" rel="noopener">Instagram</a>
-    </div>
-    <div class="footer-copy">© 2026 伊登森活 Idun Beauty SPA<br>台南市東區東光路2段42號2樓</div>
-  </footer>
 </div>
 
 
@@ -2082,7 +2084,6 @@
         <div class="result-face face-after" style="background:#ede0c8;">
           <img src="images/r1-after.png" alt="科技幸福SO 瘦身後" loading="lazy" style="object-fit: contain; object-position: center top;">
           <div style="position:absolute;inset:0;background:#ede0c8;mix-blend-mode:multiply;pointer-events:none;"></div>
-        </div>
         </div>
       </div>
       <div class="result-info">
@@ -2195,15 +2196,6 @@
 
   </div>
 
-  <footer>
-    <div class="footer-brand">伊登森活 Idun Beauty SPA</div>
-    <div class="footer-links">
-      <a href="tel:0913339968">📞 0913-339-968</a>
-      <a href="https://lin.ee/sfbEmKl" target="_blank" rel="noopener">LINE @fgv6668o</a>
-      <a href="https://www.instagram.com/idun__spa" target="_blank" rel="noopener">Instagram</a>
-    </div>
-    <div class="footer-copy">© 2026 伊登森活 Idun Beauty SPA<br>台南市東區東光路2段42號2樓</div>
-  </footer>
 </div>
 
 
@@ -2228,15 +2220,25 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-brand">伊登森活 Idun Beauty SPA</div>
-    <div class="footer-links">
-      <a href="tel:0913339968">📞 0913-339-968</a>
-      <a href="https://lin.ee/sfbEmKl" target="_blank" rel="noopener">LINE @fgv6668o</a>
-      <a href="https://www.instagram.com/idun__spa" target="_blank" rel="noopener">Instagram</a>
-    </div>
-    <div class="footer-copy">© 2026 伊登森活 Idun Beauty SPA<br>台南市東區東光路2段42號2樓</div>
-  </footer>
+</div>
+
+
+<!-- ════════════════════════════════════
+     MONTHLY FAV
+════════════════════════════════════ -->
+<div id="monthly" class="page">
+
+  <div class="monthly-header">
+    <span class="label">Monthly Favorite</span>
+    <div class="ornament"><span class="ornament-glyph">✦</span></div>
+    <h1>本月寵粉</h1>
+    <p>每月限定優惠・專屬回饋</p>
+  </div>
+
+  <div class="monthly-img-wrap">
+    <img src="images/monthly-fav.jpg" alt="本月寵粉優惠">
+  </div>
+
 </div>
 
 
@@ -2302,16 +2304,18 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-brand">伊登森活 Idun Beauty SPA</div>
-    <div class="footer-links">
-      <a href="tel:0913339968">📞 0913-339-968</a>
-      <a href="https://lin.ee/sfbEmKl" target="_blank" rel="noopener">LINE @fgv6668o</a>
-      <a href="https://www.instagram.com/idun__spa" target="_blank" rel="noopener">Instagram</a>
-    </div>
-    <div class="footer-copy">© 2026 伊登森活 Idun Beauty SPA<br>台南市東區東光路2段42號2樓</div>
-  </footer>
 </div>
+
+
+<footer>
+  <div class="footer-brand">伊登森活 Idun Beauty SPA</div>
+  <div class="footer-links">
+    <a href="tel:0913339968">📞 0913-339-968</a>
+    <a href="https://lin.ee/sfbEmKl" target="_blank" rel="noopener">LINE @fgv6668o</a>
+    <a href="https://www.instagram.com/idun__spa" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <div class="footer-copy">© 2026 伊登森活 Idun Beauty SPA<br>台南市東區東光路2段42號2樓</div>
+</footer>
 
 
 <!-- ════════════════════════════════════
@@ -2319,8 +2323,11 @@
 ════════════════════════════════════ -->
 <script>
   /* ── Page Switching ── */
+  function setScrollLock(id) {
+    document.body.style.overflow = id === 'home' ? 'hidden' : '';
+  }
+
   function showPage(id) {
-    const pages = document.querySelectorAll('.page');
     const current = document.querySelector('.page.active');
     const next = document.getElementById(id);
     if (!next || current === next) return;
@@ -2335,10 +2342,12 @@
 
       next.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'instant' });
-
+      setScrollLock(id);
       updateNav(id);
     }, 260);
   }
+
+  setScrollLock('home');
 
   function updateNav(id) {
     document.querySelectorAll('[data-page]').forEach(el => {
