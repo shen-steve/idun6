@@ -714,21 +714,30 @@
         transparent 100%);
     }
 
-    .about-story-text .label { margin-bottom: .6rem; display: block; }
+    .about-story-text .label { margin-bottom: 1.4rem; display: block; font-size: 1rem; }
 
     .about-story-text h1 {
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: .04em;
-      line-height: 1.45;
+      line-height: 1.7;
       color: #1a2a1c;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
     }
 
-    .about-story-text p {
-      font-size: .92rem;
-      line-height: 2;
+    .about-story-text p:first-of-type {
+      font-size: 1.15rem;
+      line-height: 1.7;
       color: rgba(45,58,46,.92);
+      font-weight: 400;
+      margin-bottom: 1.6rem;
+      max-width: 460px;
+    }
+
+    .about-story-text p + p {
+      font-size: .9rem;
+      line-height: 1.85;
+      color: rgba(45,58,46,.85);
       font-weight: 400;
       margin-bottom: .8rem;
       max-width: 460px;
@@ -1867,9 +1876,8 @@
   <!-- Story: text left + image right -->
   <div class="about-story">
     <div class="about-story-text">
-      <span class="label">Brand Story</span>
-      <h1>在都市快節奏的腳步下<br>找回重生的自己</h1>
-      <p>你是否忘了身體何時開始沉重、呼吸何時變得淺短？</p>
+      <h1>在都市快節奏的腳步下</h1>
+      <p>你是否忘了身體何時開始沉重…<br>呼吸開始變得淺短？</p>
       <p>伊登森活的誕生，不只是為了一場按摩，更是為了在繁華城市中，為你保留一處讓身心暫停、溫柔棲息的避風港。藉由身心靈沉浸、舒適的環境，放鬆下來，讓內在自我整合，讓身・心・靈回到初始的狀態，喚醒細胞，意識活化更新。</p>
       <div class="about-tags">
         <span class="about-tag">深層舒壓</span>
